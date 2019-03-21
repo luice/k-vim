@@ -92,7 +92,7 @@ set noswapfile
 set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
 
 " 突出显示当前列
-set cursorcolumn
+"set cursorcolumn
 " 突出显示当前行
 set cursorline
 
@@ -103,11 +103,11 @@ set t_ti= t_te=
 
 
 " 鼠标暂不启用, 键盘党....
-set mouse-=a
+"set mouse-=a
 " 启用鼠标
-" set mouse=a
+set mouse=a
 " Hide the mouse cursor while typing
-" set mousehide
+set mousehide
 
 
 " 修复ctrl+m 多光标操作选择的bug，但是改变了ctrl+v进行字符选中时将包含光标下的字符
@@ -156,7 +156,7 @@ set laststatus=2
 " 显示行号
 set number
 " 取消换行
-set nowrap
+"set nowrap
 
 " 括号配对情况, 跳转并高亮一下匹配的括号
 set showmatch
@@ -309,10 +309,10 @@ autocmd CmdwinEnter * nnoremap <buffer> <CR> <CR>
 
 
 " 上下左右键的行为 会显示其他信息
-inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
-inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
-inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
-inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
+"inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+"inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+"inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+"inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 
 " 打开自动定位到最后编辑的位置, 需要确认 .viminfo 当前用户可写
 if has("autocmd")
@@ -326,10 +326,10 @@ endif
 " 主要按键重定义
 
 " 关闭方向键, 强迫自己用 hjkl
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
+"map <Left> <Nop>
+"map <Right> <Nop>
+"map <Up> <Nop>
+"map <Down> <Nop>
 
 "Treat long lines as break lines (useful when moving around in them)
 "se swap之后，同物理行上线直接跳
@@ -412,6 +412,10 @@ nnoremap <silent> <Leader>z :ZoomToggle<CR>
 noremap H ^
 noremap L $
 
+" Go to top and bottom using capitalized directions
+noremap K H
+noremap J L
+
 
 " Map ; to : and save a million keystrokes 用于快速进入命令行
 nnoremap ; :
@@ -455,8 +459,8 @@ autocmd BufNewFile,BufRead *.py inoremap # X<c-h>#
 nnoremap [b :bprevious<cr>
 nnoremap ]b :bnext<cr>
 " 使用方向键切换buffer
-noremap <left> :bp<CR>
-noremap <right> :bn<CR>
+"noremap <left> :bp<CR>
+"noremap <right> :bn<CR>
 
 
 " tab 操作
@@ -549,6 +553,9 @@ nnoremap <leader>q :q<CR>
 
 " Quickly save the current file
 nnoremap <leader>w :w<CR>
+
+" Quickly save the current file and close
+nnoremap <leader>x :x<CR>
 
 " 交换 ' `, 使得可以快速使用'跳到marked位置
 nnoremap ' `
