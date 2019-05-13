@@ -99,7 +99,7 @@ set cursorline
 
 " 设置 退出vim后，内容显示在终端屏幕, 可以用于查看和复制, 不需要可以去掉
 " 好处：误删什么的，如果以前屏幕打开，可以找回
-set t_ti= t_te=
+"set t_ti= t_te=
 
 
 " 鼠标暂不启用, 键盘党....
@@ -337,6 +337,15 @@ nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
+nnoremap gh ^
+nnoremap gl $
+
+vnoremap k gk
+vnoremap gk k
+vnoremap j gj
+vnoremap gj j
+vnoremap gh ^
+vnoremap gl $
 
 " F1 - F6 设置
 
@@ -408,9 +417,9 @@ command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <Leader>z :ZoomToggle<CR>
 
 
-" Go to home and end using capitalized directions
-noremap H ^
-noremap L $
+" Go to home and end of the line on the screen using capitalized directions
+noremap H g^
+noremap L g$
 
 " Go to top and bottom using capitalized directions
 noremap K H
